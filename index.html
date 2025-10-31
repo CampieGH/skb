@@ -3,35 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>СКБ</title>
+<title>СВЕТ! КАМЕРА! БУЛГАКОВ!</title>
 <style>
 /* Заголовки — BazaART локально */
 @font-face {
   font-family: 'BazaART';
-  src: url('BazaART.otf') format('opentype');
+  src: url('bazaart.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Основной текст — Anticva локально */
+/* Основной текст — Anticva */
 @font-face {
   font-family: 'Anticva';
-  src: url('anticva.otf') format('opentype');
+  src: url('Anticva.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Базовые стили */
 body, p {
   font-family: 'Anticva', sans-serif;
   color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   overflow: hidden;
-  background: #000;
   height: 100%;
 }
 
@@ -48,23 +46,13 @@ html, body {
   transition: opacity 0.5s;
   z-index: 100;
 }
+
 .show-skb { opacity: 1; }
 
-/* Адаптив */
-@media (max-width: 768px) {
-  .skb { font-size: 4vw; }
-  .hero { font-size: 12vw; }
-  h2 { font-size: 6vw; }
-  .text-block { font-size: 4vw; max-width: 90%; padding-left: 5%; }
-  .image-block { max-width: 90%; margin-top: 1rem; }
-}
-
 /* Контейнер всех секций */
-.container {
-  transition: transform 1s ease;
-}
+.container { transition: transform 1s ease; }
 
-/* Первый экран — слева, центр по вертикали */
+/* Первый экран */
 .section.hero {
   width: 100%;
   height: 100vh;
@@ -76,58 +64,52 @@ html, body {
   font-size: 8vw;
   line-height: 1.2;
   padding-left: 5%;
+  background: #000;
 }
 .hero span { display: block; }
 
-/* Текстовые блоки с картинками */
+/* Текстовые блоки */
 .section.text {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
+  justify-content: flex-start;
   position: relative;
+  padding-left: 5%;
 }
 
 .text-block {
-  max-width: 45%;
+  max-width: 600px;
   font-size: 1.5vw;
   line-height: 1.5;
 }
 
+/* Заголовки внутри блоков */
 .text-block h2 {
   font-family: 'BazaART';
   font-size: 3.5vw;
   margin-bottom: 1rem;
 }
 
-.image-block {
-  max-width: 45%;
-  position: relative;
-}
-
-.image-block .shape {
+/* Абстрактные фигуры */
+.figure {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  border: 2px solid #fff;
-  opacity: 0.3;
-  transform: rotate(0deg);
-  border-radius: 0%;
-  animation: float 10s linear infinite;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
 }
 
-/* Рандомная анимация */
-@keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-  100% { transform: translateY(0) rotate(360deg); }
-}
-
-/* Цвет фонов */
+/* Цвета экранов */
+.section:nth-child(odd):not(.hero) { background: #000; }
 .section:nth-child(even) { background: #111; }
-.section:nth-child(odd):not(.hero) { background: #222; }
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .skb { font-size: 4vw; }
+  .hero { font-size: 12vw; }
+  h2 { font-size: 6vw; }
+  .text-block { font-size: 4vw; max-width: 90%; padding-left: 5%; }
+}
 </style>
 </head>
 <body>
@@ -142,41 +124,55 @@ html, body {
     <span>БУЛГАКОВ!</span>
   </div>
 
-  <!-- Пример текстовых блоков с абстрактными фигурами -->
+  <!-- Текстовые блоки -->
   <div class="section text">
     <div class="text-block">
-      <h2>Мир видео и фотографии</h2>
-      <p>Сегодня кажется, что каждый второй снимает видео и делает фото. В соцсетях, Reels, TikTok, YouTube — море контента. Но почти всё это либо скучно, либо «не цепляет». Снимать красиво — это не просто камера, а понимание света, композиции и эмоций.</p>
+      <h2>Видеоподкаст про фото и видео индустрию</h2>
+      <p>Сегодня кажется, что каждый второй снимает видео и делает фото. В соцсетях, Reels, TikTok, YouTube — море контента. Но правда в том, что почти всё это либо скучно, либо «не цепляет». Почему? Потому что снимать красиво — это не просто камера и фильтры. Это понимание света, композиции, эмоций и подачи.</p>
     </div>
-    <div class="image-block">
-      <div class="shape" style="top:20px; left:10px; width:80px; height:80px;"></div>
-      <div class="shape" style="top:150px; left:100px; width:50px; height:50px; border-radius:50%;"></div>
-      <div class="shape" style="top:80px; left:200px; width:40px; height:60px; transform: rotate(45deg);"></div>
-    </div>
+    <div class="figure" style="width:60px;height:60px;top:20%;right:10%;"></div>
+    <div class="figure" style="width:40px;height:40px;top:50%;right:15%;"></div>
+    <div class="figure" style="width:70px;height:70px;top:70%;right:5%;"></div>
   </div>
 
   <div class="section text">
     <div class="text-block">
-      <h2>Почему индустрия важна</h2>
-      <p>Видео — главный язык коммуникации. TikTok, Instagram, YouTube показывают: если умеешь снимать круто, тебя заметят. Простая картинка или видео уже не работает, нужна композиция, свет, эмоции и динамика.</p>
+      <h2>Почему видео и фото индустрия важна</h2>
+      <p>Мир меняется, и видео становится главным языком коммуникации. TikTok, Instagram, YouTube, Reels — всё это показывает: если ты умеешь «снимать круто», аудитория тебя заметит. Простая картинка или видео уже не работает. Рост конкуренции — ещё один фактор. Смартфон с камерой есть у всех, но сделать качественное видео или фото — совсем другое дело.</p>
     </div>
-    <div class="image-block">
-      <div class="shape" style="top:30px; left:50px; width:60px; height:60px;"></div>
-      <div class="shape" style="top:120px; left:150px; width:70px; height:40px; border-radius:50%;"></div>
-      <div class="shape" style="top:200px; left:50px; width:50px; height:50px;"></div>
-    </div>
+    <div class="figure" style="width:50px;height:50px;top:30%;right:12%;"></div>
   </div>
 
   <div class="section text">
     <div class="text-block">
-      <h2>Формат подкаста</h2>
-      <p>Проект строится вокруг живых видео-разговоров с профессионалами. Каждый выпуск — 30 минут практики, кейсов и советов. Это мини-школа по съемке, композиции, свету и монтажу.</p>
+      <h2>Проблемы новичков и аматоров</h2>
+      <p>Многие хотят снимать, но сталкиваются с барьером знаний. Не знают, с чего начать: камера, свет, монтаж, идеи. Часто повторяют чужие решения, вместо того чтобы создавать свой стиль. Ошибки новичков: плоские видео, скучные фото, плохой свет, неправильная подача. Психологическая сторона: «Я могу снять, но не понимаю, как сделать действительно круто». Именно эти проблемы подкаст решает шаг за шагом.</p>
     </div>
-    <div class="image-block">
-      <div class="shape" style="top:10px; left:30px; width:50px; height:50px;"></div>
-      <div class="shape" style="top:100px; left:120px; width:60px; height:60px; border-radius:50%;"></div>
-      <div class="shape" style="top:180px; left:50px; width:40px; height:70px; transform: rotate(30deg);"></div>
+    <div class="figure" style="width:45px;height:45px;top:60%;right:8%;"></div>
+  </div>
+
+  <div class="section text">
+    <div class="text-block">
+      <h2>Формат подкаста и концепция проекта</h2>
+      <p>Проект строится вокруг живых видео-разговоров с профессионалами из разных сфер. Каждый выпуск — как мини-школа: 30 минут практики, кейсов и советов. Зритель получает не просто теорию, а практику и вдохновение. Формат живого видео позволяет показать кадры, свет, композицию и динамику монтажа.</p>
     </div>
+    <div class="figure" style="width:60px;height:60px;top:25%;right:15%;"></div>
+  </div>
+
+  <div class="section text">
+    <div class="text-block">
+      <h2>Что получает зритель</h2>
+      <p>Проект даёт аудитории конкретные результаты: практические навыки работы с камерой, светом, композицией, монтажом; лайфхаки по настройке света без студии, монтажу видео и выбору ракурсов; вдохновение через реальные кейсы и истории из индустрии.</p>
+    </div>
+    <div class="figure" style="width:50px;height:50px;top:55%;right:10%;"></div>
+  </div>
+
+  <div class="section text">
+    <div class="text-block">
+      <h2>Итоги и тренды</h2>
+      <p>Короткие видео, видеомаркетинг, фото-тренды, креатив и эксперименты — всё это помогает прокачивать навыки и создавать контент, который реально цепляет. Каждый выпуск подкаста — как мини-школа, где можно сразу применять советы и вдохновляться примерами профессионалов.</p>
+    </div>
+    <div class="figure" style="width:70px;height:70px;top:40%;right:5%;"></div>
   </div>
 </div>
 
@@ -197,12 +193,14 @@ function goToSection(index) {
   setTimeout(() => { isScrolling = false; }, 1000);
 }
 
+// Скролл колесом
 window.addEventListener('wheel', e => {
   if(isScrolling) return;
   if(e.deltaY > 0) goToSection(current + 1);
   else if(e.deltaY < 0) goToSection(current - 1);
 });
 
+// Скролл на тачпаде/свайпы
 let startY = 0;
 window.addEventListener('touchstart', e => { startY = e.touches[0].clientY; });
 window.addEventListener('touchend', e => {
@@ -215,6 +213,3 @@ window.addEventListener('touchend', e => {
 
 </body>
 </html>
-
-
-
