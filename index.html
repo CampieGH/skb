@@ -4,147 +4,122 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>СВЕТ! КАМЕРА! БУЛГАКОВ!</title>
-<link href="https://fonts.cdnfonts.com/css/bazaart" rel="stylesheet">
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    font-family: 'BazaART', sans-serif;
-    background: #000;
-    color: #fff;
-  }
+/* Подключаем локальный шрифт */
+@font-face {
+  font-family: 'BazaART';
+  src: url('BazaART.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  .section {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 5%;
-    font-size: 2.5vw;
-    line-height: 1.4;
-    position: relative;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'BazaART', sans-serif;
+  background: #000;
+  color: #fff;
+  height: 100%;
+}
 
-  .hero {
-    font-size: 8vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .hero span { display: block; line-height: 1.2; }
+.skb {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 100;
+}
+.show-skb { opacity: 1; }
 
-  h2 { font-size: 4vw; margin-bottom: 1rem; }
+.container {
+  transition: transform 1s ease;
+}
 
-  .section:nth-child(even) { background: #111; }
-  .section:nth-child(odd) { background: #222; }
+.section {
+  width: 100%;
+  height: 100vh;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* вертикально центр */
+}
 
-  .skb {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 1.5vw;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 100;
-  }
-  .show-skb { opacity: 1; }
+.hero {
+  font-size: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* вертикально */
+  align-items: flex-start; /* по левому краю */
+  line-height: 1.2;
+}
+
+.hero span { display: block; }
+
+.section:nth-child(even) { background: #111; }
+.section:nth-child(odd):not(.hero) { background: #222; }
+
+h2 { font-size: 4vw; margin-bottom: 1rem; }
 </style>
 </head>
 <body>
 
 <div class="skb">СКБ</div>
 
-<!-- Первый экран -->
-<div class="section hero">
-  <span>СВЕТ!</span>
-  <span>КАМЕРА!</span>
-  <span>БУЛГАКОВ!</span>
-</div>
+<div class="container">
+  <!-- Первый экран -->
+  <div class="section hero">
+    <span>СВЕТ!</span>
+    <span>КАМЕРА!</span>
+    <span>БУЛГАКОВ!</span>
+  </div>
 
-<!-- Лонгрид -->
-<div class="section">
-  <h2>Видеоподкаст про фото и видео индустрию</h2>
-  <p>Сегодня кажется, что каждый второй снимает видео и делает фото. В соцсетях, Reels, TikTok, YouTube — море контента. Но правда в том, что почти всё это либо скучно, либо «не цепляет». Почему? Потому что снимать красиво — это не просто камера и фильтры. Это понимание света, композиции, эмоций и подачи. Один неверный кадр, плоское освещение или скучный монтаж — и результат теряет весь смысл.</p>
-  <p>Именно эту проблему призван решать новый мини-видеоподкаст, который собирает инсайты из реальной индустрии фото и видео. Формат прост: 4–5 выпусков по 30 минут, видео-разговор с профи, которые реально делают круто, будь то реклама, кино, ТВ или творческая фотография. Это не просто разговоры — это мини-школа, где зритель получает практические знания, вдохновение и уникальные инсайты.</p>
-</div>
-
-<div class="section">
-  <h2>Почему видео и фото индустрия важна</h2>
-  <p>Мир меняется, и видео становится главным языком коммуникации. TikTok, Instagram, YouTube, Reels — всё это показывает: если ты умеешь «снимать круто», аудитория тебя заметит. Простая картинка или видео уже не работает. Смотришь ролик — и через 3 секунды понимаешь, цепляет он тебя или нет.</p>
-  <p>Рост конкуренции — ещё один фактор. Смартфон с камерой есть у всех, но сделать качественное видео или фото — совсем другое дело. Один и тот же кадр может быть как обычным контентом, так и вирусным роликом, если правильно подобрать свет, композицию и динамику монтажа.</p>
-</div>
-
-<div class="section">
-  <h2>Проблемы новичков и аматоров</h2>
-  <p>Многие хотят снимать, но сталкиваются с барьером знаний. Не знают, с чего начать: камера, свет, монтаж, идеи. Часто повторяют чужие решения, вместо того чтобы создавать свой стиль. Ошибки новичков: плоские видео, скучные фото, плохой свет, неправильная подача. Психологическая сторона: «Я могу снять, но не понимаю, как сделать действительно круто». Именно эти проблемы подкаст решает шаг за шагом.</p>
-</div>
-
-<div class="section">
-  <h2>Формат подкаста и концепция проекта</h2>
-  <p>Проект строится вокруг живых видео-разговоров с профессионалами из разных сфер. Каждый выпуск — как мини-школа: 30 минут практики, кейсов и советов. Не сухие лекции — только живой опыт и реальные истории. Видеоформат позволяет показать примеры, кадры, свет и композицию. Каждое видео — отдельная тема: кино, ТВ, реклама, мероприятия, творческая фотография. Зритель получает не просто теорию, а практику и вдохновение.</p>
+  <!-- Остальные экраны пока пустые -->
+  <div class="section"></div>
+  <div class="section"></div>
+  <div class="section"></div>
 </div>
 
 <script>
+const container = document.querySelector('.container');
 const sections = document.querySelectorAll('.section');
 const skb = document.querySelector('.skb');
 let current = 0;
 let isScrolling = false;
 
-function scrollToSection(index) {
+function goToSection(index) {
   if(index < 0 || index >= sections.length) return;
   isScrolling = true;
+  container.style.transform = `translateY(-${index * 100}vh)`;
+  current = index;
 
-  sections.forEach((sec, i) => {
-    if(i === index) {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    } else {
-      if(!sec.classList.contains('hero')) {
-        sec.style.opacity = 0;
-        sec.style.transform = "translateY(50px)";
-      }
-    }
-  });
-
-  // Шильдик СКБ показываем с 2-го экрана
-  if(index > 0) skb.classList.add('show-skb');
+  if(current > 0) skb.classList.add('show-skb');
   else skb.classList.remove('show-skb');
 
-  current = index;
   setTimeout(() => { isScrolling = false; }, 1000);
 }
 
-// Скролл мышью
+// Скролл колесом
 window.addEventListener('wheel', e => {
   if(isScrolling) return;
-  if(e.deltaY > 0) scrollToSection(current + 1);
-  else if(e.deltaY < 0) scrollToSection(current - 1);
+  if(e.deltaY > 0) goToSection(current + 1);
+  else if(e.deltaY < 0) goToSection(current - 1);
 });
 
 // Скролл на тачпаде/свайпы
-let touchStartY = 0;
-window.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; });
+let startY = 0;
+window.addEventListener('touchstart', e => { startY = e.touches[0].clientY; });
 window.addEventListener('touchend', e => {
-  const touchEndY = e.changedTouches[0].clientY;
+  const endY = e.changedTouches[0].clientY;
   if(isScrolling) return;
-  if(touchStartY - touchEndY > 50) scrollToSection(current + 1);
-  else if(touchEndY - touchStartY > 50) scrollToSection(current - 1);
+  if(startY - endY > 50) goToSection(current + 1);
+  else if(endY - startY > 50) goToSection(current - 1);
 });
 </script>
 
 </body>
 </html>
-
